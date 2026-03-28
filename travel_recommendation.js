@@ -21,7 +21,9 @@ function search() {
     let countryResults = [];
 
     (data.countries || []).forEach(country => {
-      countryResults.push(...country.cities);
+      if (country.cities && country.cities.length > 0) {
+        countryResults.push(country.cities[0]);
+      }
     });
 
     displayResults(countryResults);
