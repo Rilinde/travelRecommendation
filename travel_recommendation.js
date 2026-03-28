@@ -1,6 +1,6 @@
 let data = {};
 
-fetch('./travel_recommendation_api.json')
+fetch('./travel_recommendation_api.json?v=2')
   .then(response => response.json())
   .then(result => {
     data = result;
