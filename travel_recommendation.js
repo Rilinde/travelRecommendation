@@ -1,12 +1,14 @@
 let data = {};
 
-fetch('travel_recommendation_api.json')
+fetch('./travel_recommendation_api.json')
   .then(response => response.json())
   .then(result => {
     data = result;
-    console.log(data);
+    console.log("Data loaded:", data);
   })
-  .catch(error => console.log('Error loading JSON:', error));
+  .catch(error => {
+    console.log("Error loading JSON:", error);
+  });
 
 function search() {
   const input = document.getElementById("searchInput").value.toLowerCase().trim();
@@ -17,11 +19,9 @@ function search() {
     displayResults(data.temples || []);
   } else if (input.includes("country")) {
     let countryResults = [];
-
     (data.countries || []).forEach(country => {
-      countryResults = countryResults.concat(country.cities);
+      countryResults.push(...country.cities);
     });
-
     displayResults(countryResults);
   } else {
     document.getElementById("results").innerHTML = "<p>No results found.</p>";
