@@ -1,27 +1,49 @@
+let data = {};
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Travel Recommendation</title>
-</head>
-<body>
+fetch('./travel_recommendation_api.json')
+  .then(response => response.json())
+  .then(result => {
+    data = result;
+    console.log("Data loaded:", data);
+  })
+  .catch(error => {
+    console.log("Error loading JSON:", error);
+  });
 
-<nav>
-    <a href="#">Home</a>
-    <a href="#">About Us</a>
-    <a href="#">Contact Us</a>
+function search() {
+  const input = document.getElementById("searchInput").value.toLowerCase().trim();
 
-    <input type="text" id="searchInput" placeholder="Search...">
-    <button onclick="search()">Search</button>
-    <button onclick="clearResults()">Reset</button>
-</nav>
+  if (input.includes("beach")) {
+    displayResults(data.beaches || []);
+  } else if (input.includes("temple")) {
+    displayResults(data.temples || []);
+  } else if (input.includes("country")) {
+    let countryResults = [];
+    (data.countries || []).forEach(country => {
+      countryResults.push(...country.cities);
+    });
+    displayResults(countryResults);
+  } else {
+    document.getElementById("results").innerHTML = "<p>No results found.</p>";
+  }
+}
 
-<h1>Welcome to Travel Recommendation</h1>
-<p>Find the best beaches, temples, and countries.</p>
+function displayResults(items) {
+  const resultsDiv = document.getElementById("results");
+  resultsDiv.innerHTML = "";
 
-<div id="results"></div>
+  items.slice(0, 2).forEach(item => {
+    resultsDiv.innerHTML += `
+      <div>
+        <h3>${item.name}</h3>
+        <img src="${item.imageUrl}" width="300" alt="${item.name}">
+        <p>${item.description}</p>
+      </div>
+    `;
+  });
+}
 
-<script src="travel_recommendation.js"></script>
-
-</body>
-</html>
+function clearResults() {
+  document.getElementById("searchInput").value = "";
+  document.getElementById("results").innerHTML = "";
+}
