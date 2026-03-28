@@ -1,53 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Contact Us</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        nav {
-            margin-bottom: 20px;
-        }
-
-        nav a {
-            margin-right: 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        input, textarea {
-            padding: 5px;
-            width: 300px;
-        }
-
-        button {
-            padding: 5px 10px;
-        }
-    </style>
-</head>
-<body>
-
-<nav>
-    <a href="travel_recommendation.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact Us</a>
-</nav>
-
-<h1>Contact Us</h1>
-
 <form action="mailto:youremail@gmail.com" method="post" enctype="text/plain">
-    <input type="text" name="name" placeholder="Name"><br><br>
-    <input type="email" name="email" placeholder="Email"><br><br>
-    <textarea name="message" placeholder="Message"></textarea><br><br>
+    <label>Name:</label><br>
+    <input type="text" name="name"><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" name="email"><br><br>
+
+    <label>Message:</label><br>
+    <textarea name="message"></textarea><br><br>
+
     <button type="submit">Send</button>
 </form>
-
-</body>
-</html>
