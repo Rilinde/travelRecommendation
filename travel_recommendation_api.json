@@ -1,64 +1,22 @@
-{
-  "countries": [
-    {
-      "id": 1,
-      "name": "Australia",
-      "cities": [
-        {
-          "name": "Sydney, Australia",
-          "imageUrl": "Images/Sydney.jpg",
-          "description": "A vibrant city known for its iconic landmarks like the Sydney Opera House and Harbour Bridge."
-        },
-        {
-          "name": "Melbourne, Australia",
-          "imageUrl": "Images/Melbourne.jpg",
-          "description": "A cultural hub famous for its art, food, and diverse neighborhoods."
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Japan",
-      "cities": [
-        {
-          "name": "Tokyo, Japan",
-          "imageUrl": "Images/Tokyo.jpg",
-          "description": "A bustling metropolis blending tradition and modernity."
-        },
-        {
-          "name": "Kyoto, Japan",
-          "imageUrl": "Images/Kyoto.jpg",
-          "description": "Known for its historic temples, gardens, and traditional tea houses."
-        }
-      ]
-    }
-  ],
-  "temples": [
-    {
-      "id": 1,
-      "name": "Angkor Wat, Cambodia",
-      "imageUrl": "Images/Angor.jpg",
-      "description": "A UNESCO World Heritage site and the largest religious monument in the world."
-    },
-    {
-      "id": 2,
-      "name": "Taj Mahal, India",
-      "imageUrl": "Images/Taj.jpg",
-      "description": "An iconic symbol of love and a masterpiece of Mughal architecture."
-    }
-  ],
-  "beaches": [
-    {
-      "id": 1,
-      "name": "Bora Bora, French Polynesia",
-      "imageUrl": "Images/Bora Bora beach.jpg",
-      "description": "An island known for its stunning turquoise waters."
-    },
-    {
-      "id": 2,
-      "name": "Copacabana Beach, Brazil",
-      "imageUrl": "Images/Copacabana.jpg",
-      "description": "A famous beach in Rio de Janeiro."
-    }
-  ]
-}
+"countries": [
+  {
+    "name": "Australia",
+    "cities": [
+      {
+        "name": "Sydney, Australia",
+        "imageUrl": "Images/Sydney.jpg",
+        "description": "Famous for the Sydney Opera House."
+      }
+    ]
+  },
+  {
+    "name": "France",
+    "cities": [
+      {
+        "name": "Paris, France",
+        "imageUrl": "Images/Paris.jpg",
+        "description": "Known for the Eiffel Tower."
+      }
+    ]
+  }
+]
