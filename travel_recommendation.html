@@ -1,49 +1,102 @@
-let data = {};
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travel Recommendation</title>
 
-fetch('./travel_recommendation_api.json')
-  .then(response => response.json())
-  .then(result => {
-    data = result;
-    console.log("Data loaded:", data);
-  })
-  .catch(error => {
-    console.log("Error loading JSON:", error);
-  });
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
 
-function search() {
-  const input = document.getElementById("searchInput").value.toLowerCase().trim();
+        nav {
+            margin-bottom: 20px;
+        }
 
-  if (input.includes("beach")) {
-    displayResults(data.beaches || []);
-  } else if (input.includes("temple")) {
-    displayResults(data.temples || []);
-  } else if (input.includes("country")) {
-    let countryResults = [];
-    (data.countries || []).forEach(country => {
-      countryResults.push(...country.cities);
-    });
-    displayResults(countryResults);
-  } else {
-    document.getElementById("results").innerHTML = "<p>No results found.</p>";
-  }
-}
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-function displayResults(items) {
-  const resultsDiv = document.getElementById("results");
-  resultsDiv.innerHTML = "";
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-  items.slice(0, 2).forEach(item => {
-    resultsDiv.innerHTML += `
-      <div>
-        <h3>${item.name}</h3>
-        <img src="${item.imageUrl}" width="300" alt="${item.name}">
-        <p>${item.description}</p>
-      </div>
-    `;
-  });
-}
+        input {
+            padding: 5px;
+        }
 
-function clearResults() {
-  document.getElementById("searchInput").value = "";
-  document.getElementById("results").innerHTML = "";
-}
+        button {
+            padding: 5px 10px;
+            margin-left: 5px;
+        }
+
+        #results {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        #results div {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact Us</a>
+
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button onclick="search()">Search</button>
+    <button onclick="clearResults()">Reset</button>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+    <h1>Welcome to Travel Recommendation</h1>
+    <p>Find the best beaches, temples, and countries.</p>
+</section>
+
+<!-- RESULTS -->
+<div id="results"></div>
+
+<!-- ABOUT US -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>We help travelers discover amazing destinations around the world.</p>
+
+    <h3>Our Team</h3>
+    <p>Rilinde – Developer</p>
+    <p>Team Member – Designer</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact Us</h2>
+
+    <form>
+        <input type="text" placeholder="Name"><br><br>
+        <input type="email" placeholder="Email"><br><br>
+        <textarea placeholder="Message"></textarea><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<!-- JS LINK -->
+<script src="travel_recommendation.js"></script>
+
+</body>
+</html>
