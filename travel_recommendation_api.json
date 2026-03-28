@@ -6,7 +6,7 @@
       "cities": [
         {
           "name": "Sydney, Australia",
-          "imageUrl": "https://images.unsplash.com/photo-1506973035872-a4f23ef5f1c3",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Sydney_Opera_House_Sails.jpg",
           "description": "A vibrant city known for the Sydney Opera House."
         },
         {
@@ -22,7 +22,7 @@
     {
       "id": 1,
       "name": "Angkor Wat, Cambodia",
-      "imageUrl": "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=800&q=60",
+     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Angkor_Wat_temple.jpg",
       "description": "The largest religious monument in the world."
     },
     {
