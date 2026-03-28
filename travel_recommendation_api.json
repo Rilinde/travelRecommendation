@@ -35,11 +35,12 @@
   ],
   "temples": [
     {
-      "id": 1,
-      "name": "Angkor Wat, Cambodia",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Angkor_Wat_temple.jpg",
-      "description": "A UNESCO World Heritage site and the largest religious monument in the world."
-    },
+     {
+  "id": 1,
+  "name": "Angkor Wat, Cambodia",
+  "imageUrl": "https://images.unsplash.com/photo-1549880181-56a44cf4a9a9",
+  "description": "A UNESCO World Heritage site and the largest religious monument in the world."
+},
     {
       "id": 2,
       "name": "Taj Mahal, India",
