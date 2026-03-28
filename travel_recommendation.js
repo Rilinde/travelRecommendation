@@ -9,7 +9,7 @@ fetch('./travel_recommendation_api.json')
   .catch(error => console.log("Error:", error));
 
 function search() {
-  const input = document.getElementById("searchInput").value.toLowerCase();
+  const input = document.getElementById("searchInput").value.toLowerCase().trim();
 
   if (input.includes("beach")) {
     displayResults(data.beaches || []);
@@ -25,6 +25,9 @@ function search() {
     });
 
     displayResults(countryResults);
+  } 
+  else {
+    document.getElementById("results").innerHTML = "<p>No results found.</p>";
   }
 }
 
@@ -36,7 +39,12 @@ function displayResults(items) {
     resultsDiv.innerHTML += `
       <div>
         <h3>${item.name}</h3>
-        <img src="${item.imageUrl}" width="300">
+        <img 
+          src="${item.imageUrl}" 
+          alt="${item.name}" 
+          width="300"
+          onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Image+Unavailable';"
+        >
         <p>${item.description}</p>
       </div>
     `;
